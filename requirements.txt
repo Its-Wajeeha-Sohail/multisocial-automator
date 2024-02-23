@@ -1,0 +1,8 @@
+appdirs
+asn1crypto
+cffi
+cssselect
+enum34
+idna
+ipaddress
+lxml
