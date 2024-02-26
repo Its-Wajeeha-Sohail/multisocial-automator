@@ -31,13 +31,19 @@ def get_login_page(login_method, browser_obj):
         log_in.click()
 
     else:
-        try:
-            log_in = WebDriverWait(browser_obj, 15).until(
-                EC.presence_of_element_located(
-                    (By.XPATH, '//a[contains(text(), "Log in")]'))
-            )
-        except BaseException:
-            browser_obj.quit()
-        log_in.click()
-        time.sleep(5)
+        # try:
+        #     log_in = WebDriverWait(browser_obj, 15).until(
+        #         EC.presence_of_element_located(
+        #             (By.XPATH, '//a[contains(text(), "Log in")]'))
+        #     )
+        # except BaseException:
+        #     browser_obj.quit()
+        # log_in.click()
+        # time.sleep(5)
 
+
+        browser_obj.get('https://www.facebook.com/accounts/login/')
+        # Wait for the login button to be clickable
+        log_in = WebDriverWait(browser_obj, 10).until(EC.element_to_be_clickable((By.XPATH, '//*[@id="loginForm"]/div/div[3]/button')))
+        log_in.click()
+        

@@ -6,3 +6,5 @@ enum34
 idna
 ipaddress
 lxml
+parsel
+pyasn1
