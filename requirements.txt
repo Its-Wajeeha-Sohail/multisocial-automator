@@ -8,3 +8,6 @@ ipaddress
 lxml
 parsel
 pyasn1
+pycparser
+pyparsing
+queuelib
