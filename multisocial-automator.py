@@ -15,9 +15,9 @@ from comment_list import comment_list
 from utils import login_from_fb
 
 login_mode = input(
-    "If you want to login via Facebook press y/Y : ")
+    "If you want to login via Facebook press y/Y else login via instagram credentials by pressing n/N: ")
 
-login_method = 'facebook' if login_mode.lower == 'y' else 'facebook'
+login_method = 'facebook' if login_mode.lower == 'y' else 'instagram'
 
 # Get the users username and password
 username = input("Enter your {} username: ".format(login_method.upper()))
@@ -34,7 +34,7 @@ while password != password_match:
 CREATING FOLDER WITH THE NAME OF THE
 PERSON YOU WANT TO DOWNLOAD PICTURES OF
 '''
-friend_username = input("Enter the facebook username of the person you want to like and download all the photos of: ")
+friend_username = input("Enter the facebook/instagram username of the person you want to like and download all the photos of: ")
 folder_name = friend_username
 
 # Check if the directory with the name already exists. If yes then ask for some other directory name.
@@ -53,7 +53,9 @@ chrome_options = Options()
 # Setting implicit wait to 10 seconds.
 browser_obj.implicitly_wait(10)
 
-browser_obj.get('https://www.facebook.com/')
+# if you need facebook scrapper then uncomment the facebook url otherwise instagram
+browser_obj.get('http://instagram.com')
+# browser_obj.get('https://www.facebook.com/')
 
 # Making a delay of 10 seconds to load
 print (login_method)
@@ -64,7 +66,8 @@ USER PREFERENCE OF LOGIN VIA FB
 if login_method == "facebook":
     login_from_fb(browser_obj, username, password)
 else:
-    pass
+    login_from_insta(browser_obj, username, password)
+
 # Creating a delay for log in to happen properly
 time.sleep(5)
 
