@@ -15,6 +15,15 @@ def login_from_fb(browser_obj, username, password):
     login_button = browser_obj.find_element_by_id('loginbutton')
     login_button.click()
 
+def login_from_insta(browser_obj, username, password):
+    """  If a user wants to login using their instagram credentials. """
+
+    get_login_page('instagram', browser_obj)
+    login_username, login_password, *_ = browser_obj.find_elements_by_xpath('//input')
+    login_username.send_keys(username)
+    login_password.send_keys(password)
+    log_in = browser_obj.find_element_by_xpath('//*[@id="loginForm"]/div/div[3]/button, "Log in")]')
+    log_in.click()
 
 
 def get_login_page(login_method, browser_obj):
