@@ -11,3 +11,7 @@ pyasn1
 pycparser
 pyparsing
 queuelib
+packaging
+selenium
+six
+w3lib

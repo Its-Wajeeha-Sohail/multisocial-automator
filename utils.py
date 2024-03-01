@@ -1,4 +1,5 @@
-""" Utility packages for facebook-automation. """
+
+""" Utility packages for instagram-automation. """
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -14,6 +15,7 @@ def login_from_fb(browser_obj, username, password):
     login_password.send_keys(password)
     login_button = browser_obj.find_element_by_id('loginbutton')
     login_button.click()
+
 
 def login_from_insta(browser_obj, username, password):
     """  If a user wants to login using their instagram credentials. """
@@ -51,8 +53,11 @@ def get_login_page(login_method, browser_obj):
         # time.sleep(5)
 
 
-        browser_obj.get('https://www.facebook.com/accounts/login/')
+ 
+        browser_obj.get('https://www.instagram.com/accounts/login/')
         # Wait for the login button to be clickable
         log_in = WebDriverWait(browser_obj, 10).until(EC.element_to_be_clickable((By.XPATH, '//*[@id="loginForm"]/div/div[3]/button')))
         log_in.click()
+        
+        
         
