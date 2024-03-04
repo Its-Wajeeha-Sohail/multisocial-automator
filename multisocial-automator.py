@@ -12,7 +12,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
 from comment_list import comment_list
-from utils import login_from_fb
+from utils import login_from_fb, login_from_insta, get_login_page
 
 login_mode = input(
     "If you want to login via Facebook press y/Y else login via instagram credentials by pressing n/N: ")
@@ -34,7 +34,7 @@ while password != password_match:
 CREATING FOLDER WITH THE NAME OF THE
 PERSON YOU WANT TO DOWNLOAD PICTURES OF
 '''
-friend_username = input("Enter the facebook/instagram username of the person you want to like and download all the photos of: ")
+friend_username = input("Enter the INSTAGRAM username of the person you want to like and download all the photos of: ")
 folder_name = friend_username
 
 # Check if the directory with the name already exists. If yes then ask for some other directory name.
@@ -50,22 +50,24 @@ os.mkdir(folder_name)
 
 browser_obj = webdriver.Chrome()
 chrome_options = Options()
+chrome_options.add_argument("--headless")  # Optional: run Chrome in headless mode
+# chrome_service = Service('/Users/karanmitroo/Downloads/chromedriver')
+# browser_obj = webdriver.Chrome(service=chrome_service, options=chrome_options)
 # Setting implicit wait to 10 seconds.
 browser_obj.implicitly_wait(10)
 
-# if you need facebook scrapper then uncomment the facebook url otherwise instagram
 browser_obj.get('http://instagram.com')
-# browser_obj.get('https://www.facebook.com/')
 
 # Making a delay of 10 seconds to load
 print (login_method)
 '''
 CALLING THE LOGIN FUNCTION DEPENDING UPON THE
-USER PREFERENCE OF LOGIN VIA FB 
+USER PREFERENCE OF LOGIN VIA FB OR INSTA
 '''
 if login_method == "facebook":
     login_from_fb(browser_obj, username, password)
 else:
+
     login_from_insta(browser_obj, username, password)
 
 # Creating a delay for log in to happen properly
@@ -74,7 +76,7 @@ time.sleep(5)
 '''
 GOING TO THE PROFILE OF THE SPECIFIED USER
 '''
-browser_obj.get('https://www.facebook.com/' + friend_username + '/')
+browser_obj.get('http://instagram.com/' + friend_username + '/')
 
 
 '''
@@ -170,6 +172,8 @@ def do(browser_obj, all):
 
 do(browser_obj, all)
 browser_obj.quit()
+
+
 
 
 
