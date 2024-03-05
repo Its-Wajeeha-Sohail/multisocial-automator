@@ -18,7 +18,7 @@ The requirements to run this code are provided in the file "requirements.txt"
     ```
 2. Create a VirtualEnvironment and install requirements.txt file using "pip install -r requirements.txt".
     ```
-    pip install -r requirements.txt
-    ```
+   
+    
 3. Once all the requirements are installed, simply run the "instagram.py" file from terminal.
 4. It will request for your credentials and the user you want to download all the content of.

@@ -56,7 +56,7 @@ chrome_options.add_argument("--headless")  # Optional: run Chrome in headless mo
 # Setting implicit wait to 10 seconds.
 browser_obj.implicitly_wait(10)
 
-browser_obj.get('http://instagram.com')
+browser_obj.get('http://facebook.com')
 
 # Making a delay of 10 seconds to load
 print (login_method)
