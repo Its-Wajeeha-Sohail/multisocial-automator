@@ -34,7 +34,7 @@ while password != password_match:
 CREATING FOLDER WITH THE NAME OF THE
 PERSON YOU WANT TO DOWNLOAD PICTURES OF
 '''
-friend_username = input("Enter the INSTAGRAM username of the person you want to like and download all the photos of: ")
+friend_username = input("Enter the INSTAGRAM/FACEBOOK username of the person you want to like and download all the photos of: ")
 folder_name = friend_username
 
 # Check if the directory with the name already exists. If yes then ask for some other directory name.
