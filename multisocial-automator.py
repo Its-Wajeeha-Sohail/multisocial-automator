@@ -40,7 +40,7 @@ folder_name = friend_username
 # Check if the directory with the name already exists. If yes then ask for some other directory name.
 if os.path.exists(folder_name):
     folder_name = input("The folder with the name '{}' already exists. "
-                        "Enter the name of folder you want to save all photos to: ".format(friend_username))
+                        "Enter the name of folder in which you want to save all photos to: ".format(friend_username))
 
     while os.path.exists(folder_name):
         folder_name = input("The folder with the name '{}' also exists. "
