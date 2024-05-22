@@ -20,5 +20,5 @@ The requirements to run this code are provided in the file "requirements.txt"
     ```
    
     
-3. Once all the requirements are installed, simply run the "instagram.py" file from terminal.
+3. Once all the requirements are installed, simply run the "multisocial-automator.py" file from terminal.
 4. It will request for your credentials and the user you want to download all the content of.
